@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  background: #000;
+  color: white;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar{
+  display: none;
+}
+
+.dark{
+  background: rgb(23, 23, 23);
+}
+
+.loader{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap:10px;
+  background-color: transparent;
+}
+.loader > div{
+  width: fit-content;
+  height: 50px;
+  padding-inline: 10px;
+  gap: 10px;
+  background-color: white;
+  opacity: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.loader > div > p{
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 25px;
+}
