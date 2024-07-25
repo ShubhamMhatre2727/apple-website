@@ -1,5 +1,6 @@
 import Hero from "./componetns/Hero"
 import Highlights from "./componetns/Highlights"
+import ModelLoader from "./componetns/ModelLoader"
 import NavBar from "./componetns/NavBar"
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <NavBar/>
       <Hero/>
       <Highlights/>
+      <ModelLoader/>
     </div>
   )
 }

@@ -3,7 +3,6 @@ import React, { useRef, useState,useEffect } from 'react'
 const Slide = ({details, id, handleVideoEnd, handleOnPlay}) => {
     const ref = useRef(null);
     const [size, setSize] = useState((window.innerWidth > 500)?"large":"small");
-
   
   return (
     <div ref={ref} className='md:rounded-3xl overflow-hidden relative min-w-full'>
