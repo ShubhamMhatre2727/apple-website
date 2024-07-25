@@ -1,11 +1,16 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState,useEffect } from 'react'
 
 const Slide = ({details, id, handleVideoEnd, handleOnPlay}) => {
     const ref = useRef(null);
+    const [size, setSize] = useState((window.innerWidth > 500)?"large":"small");
+
+  
   return (
-    <div ref={ref} className='border relative min-w-full'>
-        <video className={`pointer-events-none h-96 w-full ${(id==3)?"object-cover":""}`} autoPlay={(id==1)?true:false} muted playsInline onEnded={()=>handleVideoEnd(id)} onPlay={()=>handleOnPlay(id - 1)}>
-            <source src={`public/videos/highlight_small_${id}.mp4`}/>
+    <div ref={ref} className='md:rounded-3xl overflow-hidden relative min-w-full'>
+        <video className={`pointer-events-none h-96 md:h-auto w-full ${(id==3)?"object-cover":""}`} autoPlay={(id==1)?true:false} muted playsInline onEnded={()=>handleVideoEnd(id)} onPlay={()=>handleOnPlay(id - 1)}>
+            
+              <source  src={`public/videos/highlight_${size}_${id}.mp4`}/>
+            
         </video>
         <div className='absolute top-5 left-5 bg-transparent font-bold text-xl opacity-50'>
         {

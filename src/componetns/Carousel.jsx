@@ -18,39 +18,46 @@ const Carousel = () => {
   const loadRef = useRef(null);
 
   function handleVideoEnd(id) {
-      ref.current.children[id].scrollIntoView()
+      // ref.current.children[id].scrollIntoView()
+      ref.current.scrollLeft = id*ref.current.children[0].clientWidth;
     ref.current.children[id].children[0].play();
   }
 
   function handleOnPlay(id) {
     //alert(id)
-    const timeline = gsap.timeline();
-    timeline.to(loadRef.current.children[id],{
-      width: "50px",
+    const dots = gsap.utils.toArray(loadRef.current.children)
+    dots.forEach((dot, idx)=>{
+      if(idx == id){
+        dot.style.width="40px"
+      }else{
+        dot.style.width="10px"
+      }
+    })
+    gsap.fromTo(loadRef.current.children[id],{
       background:"linear-gradient(to right, #707070 0%, #ffffff)",
-    });
-
-    timeline.to(loadRef.current.children[id],{
-      width: "50px",
+    },{
       background:"linear-gradient(to right, #707070 100%, #ffffff)",
       duration: ref.current.children[id].children[0].duration-1,
     });
-
-    timeline.to(loadRef.current.children[id],{
-      width: "10px",
-      background:"#707070",
-      
-    })
      }
 
   function handleScroll(i) {
+    const dots = gsap.utils.toArray(loadRef.current.children)
+    dots.forEach((dot, idx)=>{
+      if(idx == i){
+        dot.style.width="40px"
+      }else{
+        dot.style.width="10px"
+      }
+    })
     ref.current.children[i].scrollIntoView();
   }
 
 
+
   return (
     <div className="relative dark">
-      <section ref={ref} className="dark flex overflow-hidden scroll-smooth md:w-[60vw] mx-auto">
+      <section ref={ref} className="dark flex overflow-hidden scroll-smooth md:w-[80vw] md:h-[80vh] mx-auto">
         <Slide
           details={details[0]}
           id={1}
