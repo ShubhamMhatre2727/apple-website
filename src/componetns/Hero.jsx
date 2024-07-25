@@ -28,10 +28,10 @@ const Hero = () => {
             className='text-3xl font-semibold text-yellow-100 opacity-0'
         >iPhone 15 Pro</h1>
 
-        <video autoPlay muted  className='pointer-events-none w-full md:hidden'>
+        <video autoPlay muted playsInline  className='pointer-events-none w-full md:hidden'>
             <source src={`public/videos/small_2x.mp4`} type='video/mp4'/>
         </video>
-        <video autoPlay muted  className='pointer-events-none w-full hidden md:block'>
+        <video autoPlay  muted playsInline  className='pointer-events-none w-full hidden md:block'>
             <source src={`public/videos/large_2x.mp4`} type='video/mp4'/>
         </video>
 
