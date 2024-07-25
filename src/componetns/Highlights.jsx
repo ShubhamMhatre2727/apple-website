@@ -5,16 +5,16 @@ import Carousel from './Carousel'
 
 const Highlights = () => {
     
-    useGSAP(()=>{
-        gsap.fromTo("a",{
-            y:10,
+    useGSAP(() => {
+          gsap.fromTo("a",{
+            y:20,
             opacity:0
-        },{
+          },{
             y:0,
             opacity:1,
-            stagger:0.2
-        })
-    },[])
+            stagger:0.25
+          })
+      }, []);
 
   return (
     <section className='dark'>

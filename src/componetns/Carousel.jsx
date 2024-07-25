@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import Slide from "./Slide";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Carousel = () => {
@@ -19,11 +18,8 @@ const Carousel = () => {
   const loadRef = useRef(null);
 
   function handleVideoEnd(id) {
-    if(id<4){
-      
-ref.current.scrollLeft = id * ref.current.children[0].clientWidth;
+      ref.current.children[id].scrollIntoView()
     ref.current.children[id].children[0].play();
-      }
   }
 
   function handleOnPlay(id) {
@@ -31,18 +27,18 @@ ref.current.scrollLeft = id * ref.current.children[0].clientWidth;
     const timeline = gsap.timeline();
     timeline.to(loadRef.current.children[id],{
       width: "50px",
-      background:"linear-gradient(to right, #ff0000, #0000ff)",
+      background:"linear-gradient(to right, #707070 0%, #ffffff)",
     });
 
     timeline.to(loadRef.current.children[id],{
       width: "50px",
-      background:"linear-gradient(to right, #ff0000 100%, #0000ff)",
-      duration: ref.current.children[id].children[0].duration,
+      background:"linear-gradient(to right, #707070 100%, #ffffff)",
+      duration: ref.current.children[id].children[0].duration-1,
     });
 
     timeline.to(loadRef.current.children[id],{
       width: "10px",
-      background:"gray",
+      background:"#707070",
       
     })
      }
@@ -53,8 +49,8 @@ ref.current.scrollLeft = id * ref.current.children[0].clientWidth;
 
 
   return (
-    <div className="relative">
-      <section ref={ref} className="flex overflow-hidden scroll-smooth">
+    <div className="relative dark">
+      <section ref={ref} className="dark flex overflow-hidden scroll-smooth md:w-[60vw] mx-auto">
         <Slide
           details={details[0]}
           id={1}
