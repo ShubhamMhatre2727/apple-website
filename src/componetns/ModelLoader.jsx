@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Environment, OrbitControls } from '@react-three/drei'
-
+import { OrbitControls } from '@react-three/drei'
+import Lights from "./Lights"
 import Model from './Model'
 
 export default function ModelLoader() {
@@ -11,9 +11,9 @@ export default function ModelLoader() {
         <Suspense fallback={null}>
           <Model />
         </Suspense>
-        <ambientLight intensity={3} position={[0,0,5]}/>
-  <directionalLight  position={true} />
-  <rectAreaLight position intensity={1}/>
+        <ambientLight intensity={0.3} />
+        <Lights/>
+        
         <OrbitControls/>
       </Canvas>
     </div>

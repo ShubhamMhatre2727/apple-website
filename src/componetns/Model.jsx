@@ -6,13 +6,15 @@ Source: https://sketchfab.com/3d-models/apple-iphone-15-pro-max-black-df17520841
 Title: Apple iPhone 15 Pro Max Black
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('public/model/scene.glb')
+  const { nodes, materials } = useGLTF("public/model/scene.glb");
+  console.log(materials);
   return (
     <group {...props} dispose={null}>
+      {/* camera 1 */}
       <mesh
         castShadow
         receiveShadow
@@ -20,6 +22,7 @@ export default function Model(props) {
         material={materials.hUlRcbieVuIiOXG}
         scale={0.3}
       />
+      {/* camera2 */}
       <mesh
         castShadow
         receiveShadow
@@ -27,6 +30,7 @@ export default function Model(props) {
         material={materials.PaletteMaterial001}
         scale={0.3}
       />
+      {/* antennas */}
       <mesh
         castShadow
         receiveShadow
@@ -34,6 +38,7 @@ export default function Model(props) {
         material={materials.PaletteMaterial002}
         scale={0.3}
       />
+      {/* buttons border */}
       <mesh
         castShadow
         receiveShadow
@@ -41,6 +46,7 @@ export default function Model(props) {
         material={materials.dxCVrUCvYhjVxqy}
         scale={0.3}
       />
+      {/* screws */}
       <mesh
         castShadow
         receiveShadow
@@ -48,6 +54,7 @@ export default function Model(props) {
         material={materials.MHFGNLrDQbTNima}
         scale={0.3}
       />
+      {/* charge input */}
       <mesh
         castShadow
         receiveShadow
@@ -76,6 +83,7 @@ export default function Model(props) {
         material={materials.mcPrzcBUcdqUybC}
         scale={0.3}
       />
+      {/* speakers grills */}
       <mesh
         castShadow
         receiveShadow
@@ -83,6 +91,7 @@ export default function Model(props) {
         material={materials.pIhYLPqiSQOZTjn}
         scale={0.3}
       />
+      {/* phone frame */}
       <mesh
         castShadow
         receiveShadow
@@ -104,6 +113,7 @@ export default function Model(props) {
         material={materials.jpGaQNgTtEGkTfo}
         scale={0.3}
       />
+      {/* notch */}
       <mesh
         castShadow
         receiveShadow
@@ -111,6 +121,7 @@ export default function Model(props) {
         material={materials.ujsvqBWRMnqdwPx}
         scale={0.3}
       />
+      {/* front camera */}
       <mesh
         castShadow
         receiveShadow
@@ -118,6 +129,7 @@ export default function Model(props) {
         material={materials.sxNzrmuTqVeaXdg}
         scale={0.3}
       />
+      {/* screen */}
       <mesh
         castShadow
         receiveShadow
@@ -125,6 +137,7 @@ export default function Model(props) {
         material={materials.pIJKfZsazmcpEiU}
         scale={0.3}
       />
+      {/* bazel */}
       <mesh
         castShadow
         receiveShadow
@@ -153,6 +166,7 @@ export default function Model(props) {
         material={materials.yQQySPTfbEJufve}
         scale={0.3}
       />
+      {/* logo and camera bg */}
       <mesh
         castShadow
         receiveShadow
@@ -160,6 +174,7 @@ export default function Model(props) {
         material={materials.PaletteMaterial003}
         scale={0.3}
       />
+      {/* logo */}
       <mesh
         castShadow
         receiveShadow
@@ -167,6 +182,7 @@ export default function Model(props) {
         material={materials.PaletteMaterial004}
         scale={0.3}
       />
+      {/* back */}
       <mesh
         castShadow
         receiveShadow
@@ -181,6 +197,7 @@ export default function Model(props) {
         material={materials.yhcAXNGcJWCqtIS}
         scale={0.3}
       />
+      {/* camera bg */}
       <mesh
         castShadow
         receiveShadow
@@ -231,7 +248,7 @@ export default function Model(props) {
         scale={0.3}
       />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('public/model/scene.glb')
+useGLTF.preload("public/model/scene.glb");
