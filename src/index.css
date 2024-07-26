@@ -42,3 +42,7 @@
   background-color: gray;
   border-radius: 25px;
 }
+
+li{
+  list-style: none;
+}

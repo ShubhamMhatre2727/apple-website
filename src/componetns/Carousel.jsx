@@ -34,9 +34,9 @@ const Carousel = () => {
       }
     })
     gsap.fromTo(loadRef.current.children[id],{
-      background:"linear-gradient(to right, #707070 0%, #ffffff)",
+      background:"linear-gradient(to right, #707070 0%, #313131 0%)",
     },{
-      background:"linear-gradient(to right, #707070 100%, #ffffff)",
+      background:"linear-gradient(to right, #707070 100%, #313131 100%)",
       duration: ref.current.children[id].children[0].duration-1,
     });
      }
@@ -57,7 +57,7 @@ const Carousel = () => {
 
   return (
     <div className="relative dark">
-      <section ref={ref} className="dark flex overflow-hidden scroll-smooth md:w-[80vw] md:h-[80vh] mx-auto">
+      <section ref={ref} className="dark flex overflow-hidden scroll-smooth md:w-[80vw] h-[80vh] mx-auto">
         <Slide
           details={details[0]}
           id={1}
