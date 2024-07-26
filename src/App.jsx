@@ -1,3 +1,4 @@
+import ClosureLook from "./componetns/ClosureLook"
 import Hero from "./componetns/Hero"
 import Highlights from "./componetns/Highlights"
 import NavBar from "./componetns/NavBar"
@@ -8,6 +9,7 @@ function App() {
       <NavBar/>
       <Hero/>
       <Highlights/>
+      <ClosureLook/>
     </div>
   )
 }
