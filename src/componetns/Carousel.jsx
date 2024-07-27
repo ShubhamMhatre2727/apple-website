@@ -83,7 +83,7 @@ const Carousel = () => {
           handleOnPlay={handleOnPlay}
         />
       </section>
-      <div className="loader sticky bottom-0 my-2">
+      <div className="loader sticky bottom-0 my-2 pb-8">
         <div ref={loadRef}>
           <p onClick={() => handleScroll(0)}></p>
           <p onClick={() => handleScroll(1)}></p>
