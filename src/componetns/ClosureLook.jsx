@@ -45,10 +45,10 @@ const ClosureLook = () => {
     },[id])
     
   return (
-    <div className="relative h-[80vh] flex flex-col items-center justify-between">
+    <div className="relative h-[80vh] px-[7%] flex flex-col items-center justify-between">
         <h2 className='w-full p-4  text-start text-3xl font-semibold opacity-50'>Take a Closure Look</h2>
             <img id='image' className='absolute bottom-28' src={list[id].url} alt="" />
-        <div className="sticky bg-transparent mt-[40%] bottom-0 mx-auto text-center">
+        <div className="sticky bg-transparent mt-[40%] bottom-10 mx-auto text-center">
 
             <h3 className='text-xs font-bold w-72'>{list[id].text}</h3>
 
